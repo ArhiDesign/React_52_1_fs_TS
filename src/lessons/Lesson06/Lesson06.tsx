@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Lesson06Wrapper } from "./styles";
 
 function Lesson06() {
   // Типы переменных указываются после названия через двоеточие
@@ -9,6 +9,7 @@ function Lesson06() {
   userName = "";
   userName = "John";
   let fullName: string = `${userName} Smith`;
+
   let result: string = 1 + 2 + "3";
   console.log(result);
 
@@ -68,6 +69,7 @@ function Lesson06() {
     console.log("Hello");
     colors[1] = "pink";
   };
+
   // - если функция возвращает значение, то после двоеточия мы указываем нужный тип
   const getSum = (): number => {
     // const sum: string = '2' + '4';
@@ -79,6 +81,7 @@ function Lesson06() {
   const getUserData = (firstName: string, age: number = 18): string => {
     return `${firstName} - ${age}`;
   };
+
   console.log(getUserData("Nick", 23));
   getUserData("Tom", 34);
   console.log(getUserData("Mary"));
@@ -86,9 +89,11 @@ function Lesson06() {
   // 12. Автоматическое определение типов, происходит только при задании значения, так как тип может быть сразу определен
   let name = "Bob";
   // name = true;
+
   const numbers = [2, 3, 54, 9];
   numbers.push(23);
   // numbers.push('34');
+
   const getNumber = (num = 2) => {
     return num;
   };
@@ -100,7 +105,11 @@ function Lesson06() {
   const example: (string | boolean)[] = ["fruit", true];
 
   return (
-    <div className="lesson06-wrapper">Lesson06-TypeScript Introduction</div>
+    <Lesson06Wrapper>
+      Lesson06-TypeScript Introduction
+      {fullName}
+    </Lesson06Wrapper>
   );
 }
+
 export default Lesson06;
