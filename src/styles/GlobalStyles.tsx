@@ -1,4 +1,4 @@
-import { Global, scc} from "@emotion/react";
+import { Global, css} from "@emotion/react";
 
 const globalStyles = css`
   @import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
