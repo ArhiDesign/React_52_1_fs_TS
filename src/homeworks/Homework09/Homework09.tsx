@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
-import { Homework09Wrapper, ResultContainer } from "./styles";
+import { Homework09Wrapper, FormWrapper, ResultContainer } from "./styles";
 
 function Homework09() {
   const [name, setName] = useState<string>("");
@@ -21,6 +21,7 @@ function Homework09() {
 
   return (
     <Homework09Wrapper>
+      <FormWrapper>
       <Input
         name="name"
         label="Name"
@@ -37,6 +38,7 @@ function Homework09() {
         onChange={ageChange}
         placeholder="Enter your age"
       />
+      </FormWrapper>
       <Button name="Submit" onClick={buttonClick} />
 
       <ResultContainer>
