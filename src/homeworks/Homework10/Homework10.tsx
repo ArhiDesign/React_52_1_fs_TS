@@ -23,8 +23,8 @@ function Homework10() {
         try {
           const response = await axios.get('https://dog.ceo/api/breeds/image/random');
           setImageUrl(response.data.message); 
-        } catch (error) {
-            setError('Ошибка при загрузке картинки');
+        } catch (error: any) {
+            setError(error.message);
           //console.error('Fehler:', error);
         } finally {
             setIsLoading(false); // Останавливаем индикатор загрузки
