@@ -1,6 +1,7 @@
 
 
-import Homework10 from "./homeworks/Homework10/Homework10";
+
+
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -14,6 +15,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Homework08 from './homeworks/Homework08/Homework08'
 //import Homework09 from "./homeworks/Homework09/Homework09";
 //import Homework09_01 from "./homeworks/Homework09_01/Homework09_01";
+//import Homework10 from "./homeworks/Homework10/Homework10";
+//import Homework10_01 from "./homeworks/Homework10_01/Homework10_01";
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'
@@ -36,7 +39,8 @@ function App() {
       {/*<Homework09_01 />*/}
       {/* --Topic: useEffect, axios */}
       {/*<Lesson10 />*/}
-      <Homework10 />
+      {/*<Homework10 />*/}
+      {/*<Homework10_01 />*/}
     </>
   );
 }
