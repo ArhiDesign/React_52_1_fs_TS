@@ -1,7 +1,6 @@
 
 
-
-
+import Lesson11 from "./lessons/Lesson11/Lesson11";
 import GlobalStyles from "./styles/GlobalStyles";
 
 //lessons
@@ -41,6 +40,7 @@ function App() {
       {/*<Lesson10 />*/}
       {/*<Homework10 />*/}
       {/*<Homework10_01 />*/}
+      <Lesson11 />
     </>
   );
 }
