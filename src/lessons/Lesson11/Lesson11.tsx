@@ -24,7 +24,7 @@ function Lesson11() {
       const result = await axios.get(CAT_FACT_URL);
       setFacts((prevFacts) => [...prevFacts, result.data.fact]);
     } catch (error: any) {
-      setError("Error 404 Not Found");
+      setError(error.message);
     } finally {
       setIsLoading(false);
     }
