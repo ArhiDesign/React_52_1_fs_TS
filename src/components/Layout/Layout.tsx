@@ -38,6 +38,11 @@ function Layout({ children }: LayoutProps) {
             }>
             Users
           </StyledNavLink>
+          <StyledNavLink
+            to='/clients'
+            style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}>
+            Clients
+          </StyledNavLink> 
         </NavContainer>
       </Header>
       <Main>{children}</Main>

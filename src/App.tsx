@@ -15,6 +15,10 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
+import Clients from "pages/Clients/Clients";
+import Adobe from "pages/Clients/components/Adobe/Adobe";
+import Canon from "pages/Clients/components/Canon/Canon";
+import Wacom from "pages/Clients/components/Wacom/Wacom";
 
 //homeworks
 // import Homework08 from './homeworks/Homework08/Homework08'
@@ -42,6 +46,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/user" element={<User />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/adobe" element={<Adobe />} />
+          <Route path="/clients/canon" element={<Canon />} />
+          <Route path="/clients/wacom" element={<Wacom />} />
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}
