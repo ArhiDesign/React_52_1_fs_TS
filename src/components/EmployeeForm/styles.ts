@@ -4,15 +4,23 @@ export const EmployeeFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 40px;
-  width: 400px;
-  background-color: white;
+  width: 600px;
+  height: fit-content;
+  padding: 60px;
+  border: 2px solid;
   border-radius: 4px;
-  border: 1px solid #ccc;
-`;
+  background-color: white;
+`
+export const CheckboxContainer = styled.div`
+ display: flex;
+ align-items: center;
+ gap: 10px;
+`
 
-export const Title = styled.h2`
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
-`;
+export const CheckboxLabel = styled.label`
+ font-size: 20px;
+`
+export const Checkbox = styled.input`
+ width: 25px;
+ height: 25px;
+`

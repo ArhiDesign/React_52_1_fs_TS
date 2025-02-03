@@ -1,67 +1,87 @@
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import * as Yup from 'yup'
 
-import Button from "components/Button/Button";
+import { Checkbox, CheckboxContainer, CheckboxLabel, EmployeeFormContainer } from "./styles";
+import { EmployeeFormValues } from "./types";
 import Input from "components/Input/Input";
-import { EmployeeFormContainer, Title } from "./styles";
+import Button from "components/Button/Button";
 
 function EmployeeForm() {
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
-      .required("Full Name is required")
-      .min(5, "Min 5 symbols")
-      .max(50, "Max 50 symbols"),
+      .required('Required field')
+      .min(5, 'Min 2 symbols')
+      .max(50, 'Max 50 symbols')
+    ,
     age: Yup.number()
-      .required("Age is required")
-      .min(18, "Min 18 years old")
-      .max(80, "Max 80 years old")
-      .typeError("Age must be a number"),
-    jobTitle: Yup.string().max(30, "Max 30 symbols"),
-  });
+      .required('Required field')
+      .min(18, 'Min age 18')
+      .max(80, 'Max age 18')
+      .typeError('Type number')
+    ,
+    jobTitle: Yup.string()
+      .max(30, 'Max 50 symbols')
+    ,
+    agreement: Yup.boolean()
+      .oneOf([true], 'Accept agreement')
+  })
 
   const formik = useFormik({
     initialValues: {
-      fullName: "",
-      age: "",
-      jobTitle: "",
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      console.log("Form Values:", values);
-    },
-  });
+      fullName: '',
+      age: '',
+      jobTitle: '',
+      agreement: false
+    } as EmployeeFormValues,
+    validationSchema,
+    validateOnChange: false,
+    onSubmit: (values: EmployeeFormValues) => {
+      console.table(values);
+    }
+  })
 
   return (
-    <EmployeeFormContainer>
-      <Title>Employee Form</Title>
+    <EmployeeFormContainer onSubmit={formik.handleSubmit}>
       <Input
-        name="fullName"
-        label="Full Name*"
+        name='fullName'
+        id='full_name_id'
+        label='Full Name*'
+        placeholder="Enter your full name"
         value={formik.values.fullName}
         onChange={formik.handleChange}
-        placeholder="Enter full name"
         error={formik.errors.fullName}
       />
       <Input
-        name="age"
-        type="number"
-        label="Age*"
+        name='age'
+        id='age_id'
+        label='Age*'
+        placeholder="Enter your age"
         value={formik.values.age}
         onChange={formik.handleChange}
-        placeholder="Enter age"
         error={formik.errors.age}
       />
       <Input
-        name="jobTitle"
-        label="Job Title"
+        name='jobTitle'
+        id='job_title_id'
+        label='Job Title'
+        placeholder="Enter your job title"
         value={formik.values.jobTitle}
         onChange={formik.handleChange}
-        placeholder="Enter job title"
         error={formik.errors.jobTitle}
       />
-      <Button type="submit" name="Create" />
+      <CheckboxContainer>
+        <Checkbox
+          type='checkbox'
+          id='agree_id'
+          name='agreement'
+          checked={formik.values.agreement}
+          onChange={formik.handleChange}
+        />
+        <CheckboxLabel htmlFor="agree_id">I Agree</CheckboxLabel>
+      </CheckboxContainer>
+      <Button name='CREATE' type='submit' disabled={!formik.values.agreement}/>
     </EmployeeFormContainer>
-  );
+  )
 }
 
-export default EmployeeForm;
+export default EmployeeForm
