@@ -7,6 +7,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 // import Lesson08 from './lessons/Lesson08/Lesson08'
 //import Lesson09 from "./lessons/Lesson09/Lesson09";
 //import Lesson10 from "./lessons/Lesson10/Lesson10";
+//import Lesson11 from "./lessons/Lesson11/Lesson11";
 //import Lesson12 from "./lessons/Lesson12/Lesson12";
 //---Lesson 13
 import Layout from "components/Layout/Layout";
@@ -21,7 +22,6 @@ import User from "pages/Users/components/User/User";
 //import Homework09_01 from "./homeworks/Homework09_01/Homework09_01";
 //import Homework10 from "./homeworks/Homework10/Homework10";
 //import Homework10_01 from "./homeworks/Homework10_01/Homework10_01";
-
 //import Homework12 from "homeworks/Homework12/Homework12";
 
 //consultations
@@ -36,12 +36,12 @@ function App() {
       <Layout>
         {/* Routes - собирает все маршруты приложения */}
         <Routes>
-         {/* Route - компонент, в который передаётся маршрут и контент, 
+          {/* Route - компонент, в который передаётся маршрут и контент, 
          который нужно отрисовать по этому маршруту в Layout */}
-         <Route path='/' element={<Home/>}/>
-         <Route path='/about' element={<About/>}/>
-         <Route path='/users' element={<Users/>}/>
-         <Route path='/users/user' element={<User />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/users/user" element={<User />} />
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}
@@ -60,6 +60,7 @@ function App() {
       {/*<Lesson10 />*/}
       {/*<Homework10 />*/}
       {/*<Homework10_01 />*/}
+      {/*<Lesson11 />*/}
       {/* --Topic: formik, yup */}
       {/*<Lesson12 />*/}
       {/*<Homework12 />*/}
