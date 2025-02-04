@@ -1,4 +1,4 @@
-
+import { Link, useNavigate } from "react-router-dom";
 import {
   LayoutComponent,
   Header,
@@ -12,10 +12,12 @@ import { LayoutProps } from "./types";
 
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
   return (
     <LayoutComponent>
       <Header>
-        <LogoContainer></LogoContainer>
+        {/* 2 способ перехода на главную страницу при клике на логотип */}
+        <LogoContainer onClick={() => navigate('/')}></LogoContainer>
         <NavContainer>
         <StyledNavLink
             to='/'
@@ -43,12 +45,21 @@ function Layout({ children }: LayoutProps) {
             style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}>
             Clients
           </StyledNavLink> 
+          <StyledNavLink
+            to='/lesson14'
+            style={
+              ({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })
+            }>
+            Lesson 14
+          </StyledNavLink>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
         <LogoContainer></LogoContainer>
       </Footer>
+      {/* 1 способ перехода на главную страницу при клике на логотип */}
+      <Link to='/'><LogoContainer></LogoContainer></Link>
     </LayoutComponent>
   );
 }

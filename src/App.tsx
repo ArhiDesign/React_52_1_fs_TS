@@ -15,10 +15,8 @@ import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
 import User from "pages/Users/components/User/User";
-import Clients from "pages/Clients/Clients";
-import Adobe from "pages/Clients/components/Adobe/Adobe";
-import Canon from "pages/Clients/components/Canon/Canon";
-import Wacom from "pages/Clients/components/Wacom/Wacom";
+
+import Lesson14 from "lessons/Lesson14/Lesson14";
 
 //homeworks
 // import Homework08 from './homeworks/Homework08/Homework08'
@@ -27,9 +25,14 @@ import Wacom from "pages/Clients/components/Wacom/Wacom";
 //import Homework10 from "./homeworks/Homework10/Homework10";
 //import Homework10_01 from "./homeworks/Homework10_01/Homework10_01";
 //import Homework12 from "homeworks/Homework12/Homework12";
+import Clients from "pages/Clients/Clients";
+import Adobe from "pages/Clients/components/Adobe/Adobe";
+import Canon from "pages/Clients/components/Canon/Canon";
+import Wacom from "pages/Clients/components/Wacom/Wacom";
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'
+// import Consultation_04 from './consultations/Consultation_04/Consultation_04'
 
 function App() {
   return (
@@ -50,6 +53,10 @@ function App() {
           <Route path="/clients/adobe" element={<Adobe />} />
           <Route path="/clients/canon" element={<Canon />} />
           <Route path="/clients/wacom" element={<Wacom />} />
+          {/* --Topic: useContext */}
+          <Route path="/lesson14" element={<Lesson14 />} />
+          {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
+          <Route path="*" element="Page not found" />
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}
@@ -64,6 +71,7 @@ function App() {
       {/*<Lesson09 />*/}
       {/*<Homework09 />*/}
       {/*<Homework09_01 />*/}
+      {/* <Consultation_04 /> */}
       {/* --Topic: useEffect, axios */}
       {/*<Lesson10 />*/}
       {/*<Homework10 />*/}
