@@ -1,37 +1,39 @@
-import { useState, createContext } from "react";
-import Card from "../Card/Card";
-import Button from "components/Button/Button";
-import Input from "components/Input/Input";
-import { BlogManagementWrapper } from "./styles";
-import { BlogContextType } from "./types";
+import { ChangeEvent, createContext, useState } from 'react';
+import { BlogManagerContainer, ButtonContainer } from './styles';
+import Button from 'components/Button/Button';
+import Card from '../Card/Card';
+import Input from 'components/Input/Input';
 
-export const BlogContext = createContext<BlogContextType | undefined>(
-  undefined
-);
+//Шаг1 - создание контекста со значением по умолчанию - ''
+export const MessageContext = createContext<string>('')
+
 
 function BlogManagement() {
-  const [message, setMessage] = useState<string | undefined>(undefined);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState<string>('')
+  const [postedMessage, setPostedMessage] = useState<string>('')
 
-  const handlePostMessage = () => {
-    setMessage(inputValue);
-    setInputValue("");
-  };
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
 
+  const onPostMessage = () => {
+    setPostedMessage(inputValue)
+  }
+  console.log(postedMessage);
+  
   return (
-    <BlogContext.Provider value={{ message, setMessage }}>
-      <BlogManagementWrapper>
-        <Input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Write your message here..."
-          name={""}
-        />
-        <Button name="Post" onClick={handlePostMessage} />
-        {message && <Card />}
-      </BlogManagementWrapper>
-    </BlogContext.Provider>
+    //Шаг 2 - создание обертки и сохранение значения в context
+    <MessageContext.Provider value={postedMessage}>
+    <BlogManagerContainer>
+      <Input name='message' value={inputValue} onChange={onChangeInput} />
+      <ButtonContainer>
+        <Button name="Post" onClick={onPostMessage} />
+      </ButtonContainer>
+      <Card />
+    </BlogManagerContainer>
+    </MessageContext.Provider>
   );
 }
 
 export default BlogManagement;
+

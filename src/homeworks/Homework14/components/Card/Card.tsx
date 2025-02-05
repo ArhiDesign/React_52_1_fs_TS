@@ -1,19 +1,17 @@
-import { useContext } from "react";
-import { BlogContext } from "../BlogManagement/BlogManagement";
-import Message from "../Message/Message";
-import { CardWrapper, CardTitle } from "./styles";
 
+import { CardContainer, Name } from './styles'
+import Message from '../Message/Message';
+import { useContext } from 'react';
+import { MessageContext } from '../BlogManagement/BlogManagement';
 
 
 function Card() {
-  const { message } = useContext(BlogContext)!;
+    const postMessage = useContext(MessageContext)
 
-  return (
-    <CardWrapper>
-      <CardTitle>First Name Last Name</CardTitle>
-      <Message message={message} />
-    </CardWrapper>
-  );
+    return (
+        <CardContainer isShowResult={!!postMessage}>
+            <Name>John Johnson: </Name>
+            <Message />
+        </CardContainer>)
 }
-
 export default Card;

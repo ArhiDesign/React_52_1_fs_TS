@@ -1,13 +1,18 @@
-import { MessageWrapper, MessageText } from "./styles";
-import { MessageProps } from "./types";
+import { useContext } from 'react';
 
+import { MessageContainer, MessageComponent } from './styles';
+import { MessageContext } from '../BlogManagement/BlogManagement';
 
-function Message({ message }: MessageProps) {
+function Message() {
+//Шаг 3 - забираем значение из контекста
+const message = useContext(MessageContext)
+
   return (
-    <MessageWrapper>
-      <MessageText>{message}</MessageText>
-    </MessageWrapper>
+    <MessageComponent>
+      <MessageContainer>{message}</MessageContainer>
+    </MessageComponent>
   );
 }
 
 export default Message;
+

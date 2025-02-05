@@ -1,12 +1,26 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
-export const BlogManagementWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #eaeaea;
-  border-radius: 10px;
-  width: 400px;
+export const BlogManagerContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 30px;
+gap: 30px;
+width: 700px;
+height: 700px;
+background-color: #89a9ca;
+`
+
+export const TextArea = styled.textarea`
+outline: none;
+padding: 10px;
+`
+
+export const ButtonContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 150px;
+height: 10px;
+margin-bottom: 30px;
 `

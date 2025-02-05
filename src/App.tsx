@@ -29,7 +29,7 @@ import Clients from "pages/Clients/Clients";
 import Adobe from "pages/Clients/components/Adobe/Adobe";
 import Canon from "pages/Clients/components/Canon/Canon";
 import Wacom from "pages/Clients/components/Wacom/Wacom";
-import Homework14 from "homeworks/Homework14/Homework14";
+import Homework14 from "homeworks/Homework14/Homework14_01";
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'

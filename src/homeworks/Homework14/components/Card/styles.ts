@@ -1,19 +1,22 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
-export const CardWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  margin-top: 20px;
-`;
 
-export const CardTitle = styled.h3`
-  font-size: 20px;
-  color: #324b69;
+interface CardShowProps {
+    isShowResult: boolean;
+}
+
+export const CardContainer = styled.div<CardShowProps>`
+    display: ${({ isShowResult }) => isShowResult ? 'flex' : 'none'};
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+    width: 300px;
+    height: 300px;
+    background-color: #3BF5C0;
+
 `
+
+export const Name = styled.p`
+    font-size: 24px;
+` 

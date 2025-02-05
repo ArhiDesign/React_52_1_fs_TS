@@ -1,16 +1,16 @@
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 
-export const MessageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  width: 100%;
-`;
-
-export const MessageText = styled.p`
-  font-size: 16px;
-  color: #3a6960;
+export const MessageContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 30px;
+gap: 20px;
+width: 300px;
+height: 100px;
+background-color: #A53BF5;
+`
+export const MessageComponent = styled.div`
+display: flex;
+flex-direction: column;
 `

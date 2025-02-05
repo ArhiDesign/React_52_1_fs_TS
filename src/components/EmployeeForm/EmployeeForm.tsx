@@ -37,6 +37,7 @@ function EmployeeForm() {
     validateOnChange: false,
     onSubmit: (values: EmployeeFormValues) => {
       console.table(values);
+      //setFormValues(values) - setFormValues получаем из контекста
     }
   })
 
