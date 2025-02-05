@@ -29,6 +29,7 @@ import Clients from "pages/Clients/Clients";
 import Adobe from "pages/Clients/components/Adobe/Adobe";
 import Canon from "pages/Clients/components/Canon/Canon";
 import Wacom from "pages/Clients/components/Wacom/Wacom";
+import Homework14 from "homeworks/Homework14/Homework14_01";
 
 //consultations
 // import Consultation03 from './consultations/Consultation03/Consultation03'
@@ -57,6 +58,7 @@ function App() {
           <Route path="/lesson14" element={<Lesson14 />} />
           {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
           <Route path="*" element="Page not found" />
+          <Route path="/Homework14" element={<Homework14 />} />
         </Routes>
       </Layout>
       {/* Topic: TypeScript - Introduction */}
